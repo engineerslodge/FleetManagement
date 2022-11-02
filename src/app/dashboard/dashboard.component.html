@@ -1,0 +1,318 @@
+<main id="main" class="main" >
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+  <section class="section profile" >
+    <div class="row">
+      <div class="col-xl-4">
+
+        <div class="card" *ngIf="UserDataClaims">
+        <div class="row" style="padding:4px">
+        <div class="col-md-12" style="padding:20px">            
+        <h6 class="display-7 text-center">
+          <strong>You can Equally Own Your Dream Car With</strong>
+        </h6>
+        <h4 class="text-bold display-7 text-center"><span class="btn btn-warning"><strong>AutoVest</strong></span></h4> 
+        <br>
+        Whether You are looking for a smart way to commute or to earn a living , We have got you covered !.
+              
+        
+        </div>
+        </div>    
+        <hr>
+        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <h2>{{UserDataClaims.FirstName}} {{UserDataClaims.LastName}}</h2>
+            <h5>{{UserDataClaims.Email}}</h5>
+            <h6>{{UserDataClaims.LoggedOn}}</h6>
+            <div class="social-links mt-2">
+              <a href="#" class="twitter"><i class="bi bi-twitter"> </i> </a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"> </i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i> </a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i> </a>
+            </div>
+        </div>
+       
+              
+      
+        </div>
+
+      </div>
+
+      <div class="col-xl-8">
+
+        <div class="card">
+          <div class="card-body pt-3" *ngFor="let info of userInfo">
+            <!-- Bordered Tabs -->
+            <ul class="nav nav-tabs nav-tabs-bordered">
+
+              <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Welcome ,  {{info.Fullname}} !</button>
+              </li>
+
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">First Guarantor Details</button>
+              </li>
+
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Second Guarantor Details</button>
+              </li>
+
+              <!-- <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+              </li> -->
+
+            </ul>
+            <div class="tab-content pt-2" >
+
+              <div class="tab-pane fade show active profile-overview" id="profile-overview">
+             
+              <h5 class="card-title">Your Profile Details</h5>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                  <div class="col-lg-9 col-md-8">{{info.Fullname}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">Home Address</div>
+                  <div class="col-lg-9 col-md-8">{{info.Address}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">Gender</div>
+                  <div class="col-lg-9 col-md-8">{{info.gender}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">City</div>
+                  <div class="col-lg-9 col-md-8">{{info.city}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">State</div>
+                  <div class="col-lg-9 col-md-8">{{info.state}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">Phone</div>
+                  <div class="col-lg-9 col-md-8">{{info.Phone}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 label">Registration Type</div>
+                  <div class="col-lg-9 col-md-8">{{info.regType}}</div>
+                </div>
+
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                <!-- Profile Edit Form -->
+                <form>
+                  
+                  <div class="row mb-3">
+                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                    <div class="col-md-8 col-lg-9">
+                     <label>{{info.gname}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.gaddress}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="company" class="col-md-4 col-lg-3 col-form-label">Relationship</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.grelationship}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job Title</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.jobtitle}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="Country" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.gphone}}</label>
+                    </div>
+                  </div>                
+                </form><!-- End Profile Edit Form -->
+
+              </div>
+
+              <div class="tab-pane fade pt-3" id="profile-settings">
+
+                <form>
+                  
+                  <div class="row mb-3">
+                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                    <div class="col-md-8 col-lg-9">
+                     <label>{{info.gname2}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="about" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.gaddress2}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="company" class="col-md-4 col-lg-3 col-form-label">Relationship</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.grelationship2}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job Title</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.jobtitle2}}</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="Country" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                    <div class="col-md-8 col-lg-9">
+                      <label>{{info.gphone2}}</label>
+                    </div>
+                  </div>                
+                </form><!-- End Profile Edit Form -->
+
+              </div>
+
+
+            </div><!-- End Bordered Tabs -->
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-12">
+        <div class="card">
+          <div class="row">      
+          <div class="col-md-6 text-center" style="padding:20px">
+            <img src="assets/img/autovestlogo.png" style="width:20%"/>
+            <br>
+          <label class="text-dark text-bold"><strong>A smart way to own your Ride</strong></label>
+          <img src="assets/img/car.png" class="img-fluid text-center" alt="">
+          </div>
+          <div class="col-md-6" style="border-left:0.5px solid gainsboro; padding: 20px">
+            <div class="container">
+              <div class="row" style="padding:20px; margin:5px" >
+                <h5 class="display-8 text-center" > We Love Simplicity ! , <br> We Have Invested in our Automations to make documentations with us easy and friendly for you</h5>
+              </div>
+              <div class="row">
+                <div class="card outline" style="border: 0.5px solid grey;">
+                  <div class="card-header">
+                    <h5 class="text-center">Our Documentations</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive" style="padding: 12px ;">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">SN</th>
+                            <th scope="col">Documentations</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td scope="row">Guarantor Agreement Form</td>
+                                <td scope="row"> Auto Signed</td>        
+                                <td> <a routerLink="/agreement">View</a></td>                        
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td scope="row">Hire Purchase Agreement Form</td>
+                                <td scope="row"> Auto Signed</td>       
+                                <td> <a href="#">View</a></td>                                
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td scope="row">Drivers' Agreement Form</td>
+                                <td scope="row"> Auto Signed</td>            
+                                <td> <a href="#">View</a></td>                           
+                              </tr>
+                               
+                            </tbody>
+                            </table>
+                            </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+<section class="section profile">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="card">
+        <div class="card-header">
+          <h5>Ticket(s) / Complain</h5>
+          <span class="example-spacer"></span>
+          <button  (click)="openDialog()" class="btn btn-primary btn-solid"><i class="fa fa-plus">&nbsp;</i>Add New Request</button>
+          
+        </div>
+        <div class="table-responsive" style="padding: 12px ;">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">MsgCode</th>
+                <th scope="col">Title</th>
+                <th scope="col">Department</th>
+                <th scope="col">Status</th>       
+                <th scope="col">View</th>
+                <th scope="col">Trash</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let ticket of TicketInfo">
+              <tr>
+                <th scope="row">{{ticket.id}}</th>
+                <td>{{ticket.title}}</td>           
+                <td>{{ticket.department}}</td>
+                <td>{{ticket.status}}</td>
+                <td>
+                  <a class="btn btn-primary"  (click)="viewTicket(ticket)"> <i class="fa fa-pen"></i> View</a>                  
+                </td>
+                <td><a  class="btn btn-danger"  (click)="deleteTicket(ticket.id)"> <i class="fa fa-trash"></i> Delete</a></td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+</section>
+
+ 
+</main>
+

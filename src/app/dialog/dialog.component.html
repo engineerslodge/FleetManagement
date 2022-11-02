@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{actionWord}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label> Message Subject </mat-label> 
+            <input formControlName="title" matInput />
+        </mat-form-field>    
+        <mat-form-field appearance="outline">
+          <mat-label>Department</mat-label>
+         <mat-select formControlName="department" placeholder="Category">
+          <mat-option value="Fruits">Billing</mat-option>
+          <mat-option value="Vegetable">Support Service</mat-option>
+          <mat-option value="Electronics">Central Admin</mat-option>
+         </mat-select>     
+      </mat-form-field>       
+        <mat-form-field appearance="outline">
+          <mat-label> Message Subject </mat-label> 
+          <textarea matInput formControlName="description"></textarea>   
+        </mat-form-field>        
+    </form>
+    
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button mat-dialog-close color="warn">Close</button>
+      <button mat-raised-button  style="margin-left:10px" color="primary" (click)="addProduct()">{{actionBtn}}</button>
+    </div>
+</div>

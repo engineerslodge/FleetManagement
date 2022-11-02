@@ -1,0 +1,124 @@
+<section style="background-color: rgba(53, 53, 139, 0.253);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+            
+              <div class="col-md-12  d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create an Account With Us !</h5>
+<form [formGroup]="RegisterForm" >
+                    <div class="row">
+    
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >First Name</label>
+      <input type="text"  formControlName="FirstName" class="form-control form-control-lg" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Last Name</label>
+      <input type="text" formControlName="LastName"  class="form-control form-control-lg" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Address</label>
+      <input type="text" formControlName="Address"  class="form-control form-control-lg" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label"  >Gender</label>
+<select name="" id="" class="form-select" formControlName="Gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Others">Others</option>
+</select>    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label"  >State</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="State" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >City</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="City" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Address Type</label>
+        <select name="" id="" class="form-select" formControlName="Addresstype">
+            <option value="Own">Owned Apartment</option>
+            <option value="Rent">Rented Apartment</option>
+        </select> 
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Guarantor Name</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gName" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Guarantor Address</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gAddress" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Guarantor Relationship</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gRelationship"/>
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Guarantor JobTitle</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gJobtitle" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Guarantor Phone</label>
+      <input type="number"  class="form-control form-control-lg" formControlName="gPhone" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Second Guarantor Name </label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gName2" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Second Guarantor Address</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gAddress2" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Second Guarantor Relationship</label>
+      <input type="text"  class="form-control form-control-lg"  formControlName="gRelationship2"/>
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Second Guarantor JobTitle</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="gJobtitle2" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >Second Guarantor Phone</label>
+      <input type="number"  class="form-control form-control-lg"  formControlName="gPhone2"/>
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >My Phone Number</label>
+      <input type="number"  class="form-control form-control-lg" formControlName="Phone" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >My Email Address</label>
+      <input type="email"  class="form-control form-control-lg" formControlName="Email" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >My UserName</label>
+      <input type="text"  class="form-control form-control-lg" formControlName="UserName" />
+    </div>
+    <div class="col-md-4" style="margin-bottom: 9px;">
+        <label class="form-label" >My Password</label>
+        <i> (Min Length is 10 )</i>
+      <input type="password"  class="form-control form-control-lg" formControlName="Password" minlength="10" />
+    </div>
+
+    
+  </div>
+                    
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" type="button" [disabled]="!RegisterForm.valid" (click)="registerMe()">Register Account</button>
+                    </div>
+  
+                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Already Have an Account , sign in  <a href="#!"  style="color: #393f81;" routerLink="../login">Login here</a></p>
+             
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
