@@ -1,0 +1,60 @@
+<app-navigation></app-navigation>
+<ng-container>
+    <main id="main" class="main" >
+        <div class="pagetitle">
+            <h1>Transactions Portal</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                <li class="breadcrumb-item active">Transactions</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+          <section class="section profile" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="btn btn-success">My Frequent Transactions</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="padding: 12px ;">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">TransCode</th>
+                                      <th scope="col">Description</th>
+                                      <th scope="col">Notes</th>
+                                      <th scope="col">TotalBills</th>       
+                                      <th scope="col">AmountPaid</th>
+                                      <th scope="col">Balance</th>
+                                      <th scope="col">Pay-Status</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody *ngFor="let ticket of trans">
+                                    <tr>
+                                      <th scope="row">{{ticket.id}}</th>
+                                      <td>{{ticket.TransDescription}}</td>           
+                                      <td>{{ticket.Notes}}</td>
+                                      <td>{{ticket.TotalBills}}</td>
+                                      <td>{{ticket.AmountPaid}}</td>
+                                      <td>{{ticket.Balance}}</td>
+                                      <td>{{ticket.isCompleted}}</td>
+                                      <td class="justify-content-center d-flex">
+                                        <a class="btn btn-warning"  (click)="TransHistory(ticket.TransID)" > <i class="fa fa-message">&nbsp;</i>Trans History</a>                  
+                                      </td>
+                                    </tr>
+                                  
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                        </div>
+                        </div>
+
+                        </div>
+                        </section>
+                        </main>
+                        </ng-container>
+                        

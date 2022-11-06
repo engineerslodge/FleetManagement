@@ -1,0 +1,44 @@
+<ng-container>
+    <div class="row">
+        <div class="conatiner">
+            <div class="col-md-12">
+                <h6 class="btn btn-primary">My Payment History</h6>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive" style="padding: 12px ;">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">TransCode</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Notes</th>
+                          <th scope="col">TotalBills</th>       
+                          <th scope="col">AmountPaid</th>
+                          <th scope="col">Balance</th>
+                          <th scope="col">Pay-Status</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let ticket of trans">
+                        <tr>
+                          <th scope="row">{{ticket.id}}</th>
+                          <td>{{ticket.TransDescription}}</td>           
+                          <td>{{ticket.Notes}}</td>
+                          <td>{{ticket.TotalBills}}</td>
+                          <td>{{ticket.AmountPaid}}</td>
+                          <td>{{ticket.Balance}}</td>
+                          <td>{{ticket.isCompleted}}</td>
+                          
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button mat-dialog-close color="warn">Close</button>
+            <!-- <button mat-raised-button  style="margin-left:10px" color="primary" (click)="addProduct()">{{actionBtn}}</button> -->
+          </div>
+    </div>
+</ng-container>

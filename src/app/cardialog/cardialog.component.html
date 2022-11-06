@@ -1,0 +1,25 @@
+<div class="col-md-12">
+
+    <h4>Car Application Report(s)</h4>
+    <hr>
+        <h6 class="btn btn-success">Car Application Response </h6>
+        <br>
+        <p >
+            {{TicketInfo.Notes}}
+        </p>
+<hr>
+
+
+</div>
+<div class="col-md-12">
+    <h6 class="btn btn-success">Document Submission Status </h6>
+    <br>
+    <h4 class="">
+        {{TicketInfo.DocumentSubmitted}}
+    </h4>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button mat-dialog-close color="warn">Close</button>
+    <!-- <button mat-raised-button  style="margin-left:10px" color="primary" (click)="addProduct()">{{actionBtn}}</button> -->
+  </div>

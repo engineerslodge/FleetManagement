@@ -1,0 +1,58 @@
+<app-navigation></app-navigation>
+<ng-container>
+    <main id="main" class="main" >
+        <div class="pagetitle">
+            <h1>Car Application Portal</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                <li class="breadcrumb-item active">Car Applications</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+          <section class="section profile" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="btn btn-success">My Car Applications</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="padding: 12px ;">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Car Name</th>
+                                      <th scope="col">Weekly Payment</th>       
+                                      <th scope="col">Total Payment</th>
+                                      <th scope="col">Apply Type</th>
+                                      <th scope="col">Status</th>
+                                      <!-- <th scope="col"> Document Submitted</th> -->
+                                    </tr>
+                                  </thead>
+                                  <tbody *ngFor="let ticket of carapply">
+                                    <tr>
+                                      <th scope="row">{{ticket.CarName}}</th>                                        
+                                      <td>{{ticket.WeeklyPayment}}</td>
+                                      <td>{{ticket.TotalPayment}}</td>
+                                      <td>{{ticket.ApplyType}}</td>
+                                      <td>{{ticket.Status}}</td>
+                                      <!-- <td>{{ticket.DocumentSubmitted}}</td> -->
+                                      <td class="justify-content-center d-flex">
+                                        <a class="btn btn-warning"  (click)="TransHistory(ticket)" > <i class="fa fa-message">&nbsp;</i>View</a>                  
+                                      </td>
+                                     
+                                    </tr>
+                                  
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                        </div>
+                        </div>
+
+                        </div>
+                        </section>
+                        </main>
+                        </ng-container>
+                        

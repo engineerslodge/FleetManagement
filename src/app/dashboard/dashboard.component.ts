@@ -63,6 +63,16 @@ getUserCredentials()
   });
  }
 
+ GetImage(filename :string)
+ {
+  var image = this.api.carPhotoUrl+filename;
+  if( image != null)
+  return image;
+  else 
+  return 'assets/img/profile-img.jpg'; 
+
+ }
+
  getTicketInfo ()
  {
   var params =sessionStorage.getItem("usermail");  
@@ -75,11 +85,11 @@ openDialog() {
   this.dialog.open(DialogComponent,{
     width:"50%"
   }).afterClosed().subscribe(val =>{
-    if(val =="save")
+    if(val =="Save")
     {
       this.getTicketInfo();
     }
- })   // refresh page
+ });  // refresh page
 }
 
 deleteTicket(id:any)

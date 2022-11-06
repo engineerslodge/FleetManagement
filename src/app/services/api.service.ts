@@ -8,6 +8,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ApiService {
 
   readonly rootURL ="http://localhost:33249/";
+  readonly carPhotoUrl ="http://localhost:33249/carphotos/";
+  readonly Flutterwave ="https://checkout.flutterwave.com/v3/hosted/pay";
 
   constructor(private http : HttpClient) { }
 
@@ -66,11 +68,38 @@ export class ApiService {
   {
     return this.http.post<any>(this.rootURL+'/api/service/createTicket', data);
   }
-
+ 
+  flutterPay(data:any)
+  {
+    return this.http.post<any>(this.Flutterwave, data);
+  }
+  
   deleteTicket(data:any)
   {
     return this.http.delete<any>(this.rootURL+'/api/service/deleteTicket?id='+data);
   }
+
+  customerTransaction (data:any)
+  {
+    return this.http.get<any>(this.rootURL+'/api/service/customerTransaction?id='+data);
+  
+  }
+
+  customerCarApply (data:any)
+  {
+    return this.http.get<any>(this.rootURL+'/api/service/customerCarApply?id='+data);
+  
+  }
+  GetCarShop ()
+  {
+    return this.http.get<any>(this.rootURL+'/api/service/getshop');
+  }
+
+  customerTransactionByHistory(id:any, email:any)
+  {
+    return this.http.get<any>(this.rootURL+'/api/service/customerTransactionByHistory/param?id='+id+'&email='+email);
+  }
+
 }
 
 

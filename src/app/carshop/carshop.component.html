@@ -1,0 +1,98 @@
+<app-navigation></app-navigation>
+<ng-container>
+    <main id="main" class="main" >
+        <div class="pagetitle">
+            <h1>Car Shopping Portal</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                <li class="breadcrumb-item active">Car Shops</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+          <section class="section profile" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card"  *ngFor="let ticket of carshop">
+                        <div class="card-header">
+                            <h4 class="btn btn-primary"> <i class="fa fa-car">&nbsp;</i>Autovest Available Car For Hire Purchase</h4>
+
+                            <span class="d-flex justify-content-end"> 
+                                <button class="btn btn-success">Is Car For Sale : 
+                                    <span class="badge badge-pill badge-light">{{ticket.isSale}}</span>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="card-body"  style="padding:10px">
+                            <div class="row">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <img  [src]="GetImage(ticket.Picture1)" (error)="setDefaultPic()" class="img img-fluid" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="table-responsive table" style="padding: 4px ;">
+                                        <table class="table table-bordered">
+                                          <thead class="bg-light">
+                                            <tr>
+                                              <th scope="col">Vechicle Name</th>
+                                              <th scope="col">Brand</th>       
+                                              <th scope="col">Model</th>
+                                              <th scope="col">Year</th>
+                                              <th scope="col">FuelType</th>
+                                              <th scope="col">Engine Capacity</th>
+                                              <!-- <th scope="col"> Document Submitted</th> -->
+                                            </tr>                                            
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">{{ticket.VechicleName}}</th>                                        
+                                              <td>{{ticket.Brand}}</td>
+                                              <td>{{ticket.Model}}</td>
+                                              <td>{{ticket.Year}}</td>
+                                              <td>{{ticket.FuelType}}</td>                                             
+                                              <td>{{ticket.EngineCapacity}}</td>
+                                            </tr>
+                                          
+                                          </tbody>
+                                          <thead class="bg-light">
+                                            <tr>
+                                              <th scope="col">Doors</th>
+                                              <th scope="col">Seat Capacity</th>       
+                                              <th scope="col">Total Package</th>
+                                              <th scope="col">Down Payment</th>
+                                              <th scope="col">Weekly Payment</th>
+                                              <th scope="col">Duration</th>
+                                              <!-- <th scope="col"> Document Submitted</th> -->
+                                            </tr>
+                                            
+                                          </thead>  
+                                          <tbody>
+                                        
+                                                <tr>
+                                  <th scope="row">{{ticket.Doors}}</th>                                        
+                                                
+                                                  <td>{{ticket.SeatCapacity}}</td>
+                                <td>{{ticket.TotalPackage | currency : 'NGN '}}</td>
+                                <td>{{ticket.DownPayment | currency : 'NGN '}}   </td>                                            
+                                                  <td>{{ticket.WeeklyPayment | currency : 'NGN '}}</td>
+                                                  <td>{{ticket.Duration}}</td>
+    
+                                                </tr>
+                                              
+                                  
+                                          </tbody>
+                                      
+
+                                        </table>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success" (click)="Apply(ticket)"> <i class="fa fa-user">&nbsp;</i> Apply For Car</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </section>
+                </main>
+                </ng-container>

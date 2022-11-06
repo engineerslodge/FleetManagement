@@ -14,21 +14,9 @@
 
         <div class="card" *ngIf="UserDataClaims">
         <div class="row" style="padding:4px">
-        <div class="col-md-12" style="padding:20px">            
-        <h6 class="display-7 text-center">
-          <strong>You can Equally Own Your Dream Car With</strong>
-        </h6>
-        <h4 class="text-bold display-7 text-center"><span class="btn btn-warning"><strong>AutoVest</strong></span></h4> 
-        <br>
-        Whether You are looking for a smart way to commute or to earn a living , We have got you covered !.
-              
-        
-        </div>
-        </div>    
-        <hr>
-        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img  [src]="GetImage(UserDataClaims.ProfilePic)" alt="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <h2>{{UserDataClaims.FirstName}} {{UserDataClaims.LastName}}</h2>
             <h5>{{UserDataClaims.Email}}</h5>
             <h6>{{UserDataClaims.LoggedOn}}</h6>
@@ -39,9 +27,30 @@
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i> </a>
             </div>
         </div>
-       
-              
       
+        <div class="col-md-12" style="padding:20px">            
+          <hr>
+        <h6 class="display-7 text-center">
+          <strong>You can Equally Own Your Dream Car With</strong>
+        </h6>
+        <!-- <h4 class="text-bold display-7 text-center"><span class="btn btn-warning"><strong>AutoVest</strong></span></h4>  -->
+        
+    <h6 class="btn btn-block btn-sm text-center btn-primary justify-content-center d-flex ">      Quick Links >></h6>
+    
+      <hr>
+  
+      <span>
+        <a class="btn btn-primary" routerLink="/application"> <i class="fa fa-message">&nbsp;</i>My Applications</a>
+      </span> &nbsp;&nbsp;
+      <span>
+        <a class="btn btn-danger" routerLink="/transaction"> <i class="fa fa-message">&nbsp;</i>My Transactions</a>
+      </span> &nbsp;&nbsp; 
+      <span>
+        <br><br>
+        <a class="btn btn-warning" routerLink="/shop"> <i class="fa fa-message">&nbsp;</i>Car Shops</a>
+      </span>
+        </div>
+        </div>        
         </div>
 
       </div>

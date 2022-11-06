@@ -34,6 +34,13 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { AgreementComponent } from './agreement/agreement.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { TransDialogComponent } from './trans-dialog/trans-dialog.component';
+import { CarApplicationComponent } from './car-application/car-application.component';
+import { CarshopComponent } from './carshop/carshop.component';
+import { CardialogComponent } from './cardialog/cardialog.component';
+import { CarApplyDialogComponent } from './car-apply-dialog/car-apply-dialog.component';
+import { FlutterwaveModule  } from "flutterwave-angular-v3";
 
 @NgModule({ 
   declarations: [
@@ -45,9 +52,16 @@ import { AgreementComponent } from './agreement/agreement.component';
     NavigationComponent,
     DialogComponent,
     AgreementComponent,
+    TransactionComponent,
+    TransDialogComponent,
+    CarApplicationComponent,
+    CarshopComponent,
+    CardialogComponent,
+    CarApplyDialogComponent,
   ],
   imports: [
     BrowserModule,
+    FlutterwaveModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
